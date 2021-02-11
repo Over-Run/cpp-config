@@ -29,8 +29,18 @@ class Config {
 public:
 typedef const char* String;
 /**
- * @brief Load all k2v to map.
+ * @brief Construct the configuration file reader object.
+ */
+Config();
+/**
+ * @brief Construct the configuration file reader object and load all K2Vs to map.
  * @param filename The file name.
+ */
+Config(String filename);
+/**
+ * @brief Load all K2Vs to map.
+ * @param filename The file name.
+ * @return If load success, return true, otherwise false.
  */
 bool load(String filename);
 /**

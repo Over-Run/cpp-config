@@ -9,7 +9,6 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include <string>
 
 using namespace std;
 
@@ -32,6 +31,10 @@ vector<string> split(string str, string seperator, unsigned int limit) {
 }
 
 namespace config {
+Config::Config() { }
+Config::Config(String filename) {
+    load(filename);
+}
 bool Config::load(String filename) {
     ifstream config(filename);
     if (config.is_open()) {
