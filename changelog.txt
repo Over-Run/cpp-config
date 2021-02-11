@@ -1,5 +1,7 @@
 0.1.0 2021-02-11
 - The first release.
-
 0.2.0 2021-02-11
 - Fixed some bugs.
+0.3.0 2021-02-11
+- Fixed some bugs.
+- Now added macro CPP_CONFIG_VERSION to parse the version.

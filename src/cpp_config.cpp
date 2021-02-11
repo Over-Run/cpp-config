@@ -32,10 +32,10 @@ vector<string> split(string str, string seperator, unsigned int limit) {
 
 namespace config {
 Config::Config() { }
-Config::Config(String filename) {
+Config::Config(string filename) {
     load(filename);
 }
-bool Config::load(String filename) {
+bool Config::load(string filename) {
     ifstream config(filename);
     if (config.is_open()) {
         string str;
@@ -54,17 +54,17 @@ bool Config::load(String filename) {
         return false;
     }
 }
-string Config::get(String key, string def) {
+string Config::get(string key, string def) {
     return k2v.find(key) != k2v.end() ? k2v[key] : def;
 }
-bool Config::getB(String key, bool def) {
+bool Config::getB(string key, bool def) {
     string value = get(key);
     return (value != string("null")) ? (value == string("true")) : def;
 }
-string Config::get(String key) {
+string Config::get(string key) {
     return get(key, "null");
 }
-bool Config::getB(String key) {
+bool Config::getB(string key) {
     return getB(key, false);
 }
 map<string, string> Config::values() {
